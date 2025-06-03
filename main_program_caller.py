@@ -10,11 +10,11 @@
 
 import tkinter as tk
 from tkinter import messagebox
-
+from record_manager_ import RecordManager
+from student_class import Student
 
 class StudentApplication:
     def __init__(self, root):
-        self.root = RecordManager()
+        self.manager = RecordManager()
         self.root = root
         self.root.title = ("Student Records Management Office")
-        

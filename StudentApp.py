@@ -13,7 +13,7 @@ from tkinter import messagebox
 from record_manager_ import RecordManager
 from student_class import Student
 
-class StudentApplication:
+class StudentApp:
     def __init__(self, root):
         self.manager = RecordManager()
         self.root = root
@@ -24,7 +24,7 @@ class StudentApplication:
         self.name_entry = tk.Entry(root)
         self.grade_entry = tk.Entry(root)
 
-        tk.Label(root, text="Student ID").grid(rows=0, column=0)
+        tk.Label(root, text="Student ID").grid(row=0, column=0)
         self.id_entry.grid(row=0, column=1)
         tk.Label(root, text="Name").grid(row=1, column=0)
         self.name_entry.grid(row=1 , column=1)
@@ -57,7 +57,7 @@ class StudentApplication:
             self.manager.update_student(selected[0], student)
             self.refresh_listbox()
     
-    def on_selected(self, event):
+    def on_select(self, event):
         selected = self.listbox.curselection()
         if selected:
             student = self.manager.records[selected[0]]
@@ -77,5 +77,5 @@ class StudentApplication:
     
 if __name__ == "__main__":
     root = tk.Tk()
-    app = StudentApplication(root) 
+    app = StudentApp(root) 
     root.mainloop()

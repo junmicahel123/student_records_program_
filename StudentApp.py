@@ -71,7 +71,7 @@ class StudentApp:
 
     def refresh_listbox(self):
         self.listbox.delete(0, tk.END)
-        for student in self.manager.get_all_students():
+        for student in self.manager.get_students():
             self.listbox.insert(tk.END, str(student))
 
     

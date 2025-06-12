@@ -11,10 +11,10 @@ class StudentApp:
         self.root.geometry("500x400")
         self.root.resizable(False, False)
 
-        # --- Form Frame ---
+        
         form_frame = tk.Frame(root, padx=10, pady=10)
         form_frame.pack(fill="x")
-
+#
         tk.Label(form_frame, text="Student ID:").grid(row=0, column=0, sticky="e", padx=5, pady=5)
         self.id_entry = tk.Entry(form_frame, width=30)
         self.id_entry.grid(row=0, column=1, padx=5, pady=5)
@@ -27,7 +27,7 @@ class StudentApp:
         self.grade_entry = tk.Entry(form_frame, width=30)
         self.grade_entry.grid(row=2, column=1, padx=5, pady=5)
 
-        # --- Button Frame ---
+        
         btn_frame = tk.Frame(root, pady=10)
         btn_frame.pack()
 
@@ -35,7 +35,7 @@ class StudentApp:
         tk.Button(btn_frame, text="✏️ Update", width=10, command=self.update_student).grid(row=0, column=1, padx=5)
         tk.Button(btn_frame, text="🗑️ Delete", width=10, command=self.delete_student).grid(row=0, column=2, padx=5)
 
-        # --- Listbox ---
+        
         self.listbox = tk.Listbox(root, width=65, height=12)
         self.listbox.pack(pady=10)
         self.listbox.bind('<<ListboxSelect>>', self.on_select)
